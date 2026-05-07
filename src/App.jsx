@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+const BASE = import.meta.env.BASE_URL
+
 /* ─── Image with graceful fallback ──────────────────────────────────────── */
 function Img({ src, alt, className, fallback }) {
   const [failed, setFailed] = useState(false)
@@ -132,7 +134,7 @@ function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         <a href="#" className="flex items-center gap-2 group">
           <div className="bg-white rounded-xl p-1 shadow-md shadow-black/30 transition-shadow group-hover:shadow-orange-400/20">
-            <img src="/images/Logo.jpg" alt="Fundação Potiguar" className="h-9 w-auto" />
+            <img src={BASE + 'images/Logo.jpg'} alt="Fundação Potiguar" className="h-9 w-auto" />
           </div>
           <div className="hidden sm:block">
             <div className="font-bold text-white text-sm leading-tight">Fundação Potiguar</div>
@@ -258,7 +260,7 @@ function Hero() {
               {/* Card branco elevado */}
               <div className="relative bg-white rounded-3xl p-8 lg:p-12 shadow-2xl shadow-black/60 ring-1 ring-white/20">
                 <img
-                  src="/images/Logo.jpg"
+                  src={BASE + 'images/Logo.jpg'}
                   alt="Logótipo da Fundação Potiguar"
                   className="w-full max-w-xs lg:max-w-sm mx-auto"
                   draggable={false}
@@ -368,7 +370,7 @@ function About() {
             {/* Imagem principal — vista aérea da sede */}
             <div className="relative overflow-hidden rounded-2xl group">
               <Img
-                src="/images/sede.jpg"
+                src={BASE + 'images/sede.jpg'}
                 alt="Vista aérea da Sede da Fundação Potiguar"
                 className="w-full h-72 lg:h-80 object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 fallback="w-full h-72 lg:h-80 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800"
@@ -386,7 +388,7 @@ function About() {
               {/* Fachada */}
               <div className="relative overflow-hidden rounded-xl group">
                 <Img
-                  src="/images/fachada.jpg"
+                  src={BASE + 'images/fachada.jpg'}
                   alt="Fachada da Fundação Potiguar"
                   className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
                   fallback="w-full h-40 bg-gradient-to-br from-slate-800 to-slate-700"
@@ -398,7 +400,7 @@ function About() {
               {/* Mapa / Endereço */}
               <div className="relative overflow-hidden rounded-xl group">
                 <img
-                  src="/images/endereco.png"
+                  src={BASE + 'images/endereco.png'}
                   alt="Localização da Fundação Potiguar no mapa"
                   className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -470,7 +472,7 @@ function RadioPrograms() {
           {/* Foto do estúdio — ocupa coluna completa na esquerda */}
           <div className="lg:col-span-1 lg:row-span-3 relative overflow-hidden rounded-2xl">
             <img
-              src="/images/radio.png"
+              src={BASE + 'images/radio.png'}
               alt="Estúdio da Rádio 98 FM"
               className="w-full h-64 lg:h-full object-cover"
             />
@@ -536,7 +538,7 @@ function SocialProjects() {
       title: 'Capoeira',
       subtitle: 'Resgate Cultural Afro-Brasileiro',
       desc: 'A convivência entre culturas e o resgate da dignidade do povo negro evidenciados pelo projeto de capoeira — uma alavanca para o conhecimento histórico-cultural afro-brasileiro.',
-      image: '/images/capoeira.png',
+      image: BASE + 'images/capoeira.png',
       fallback: 'bg-gradient-to-br from-yellow-900 via-amber-800/80 to-orange-900',
       tag: '60 crianças/dia',
       tagColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30',
@@ -546,7 +548,7 @@ function SocialProjects() {
       title: 'Escolinha de Futebol',
       subtitle: 'Disciplina e Saúde',
       desc: 'Time juvenil que ensina disciplina, saúde e trabalho em equipa para crianças do bairro.',
-      image: '/images/futebol.png',
+      image: BASE + 'images/futebol.png',
       fallback: 'bg-gradient-to-br from-green-900 to-green-800/60',
       tag: 'Esporte',
       tagColor: 'bg-green-500/20 text-green-300 border-green-500/30',
@@ -556,7 +558,7 @@ function SocialProjects() {
       title: 'Inclusão Digital',
       subtitle: '+700 certificados',
       desc: 'Cursos de informática básica que certificaram mais de 700 pessoas, transformando o acesso à tecnologia.',
-      image: '/images/inclusaodigital.png',
+      image: BASE + 'images/inclusaodigital.png',
       fallback: 'bg-gradient-to-br from-blue-900 to-blue-800/60',
       tag: '700+ certificados',
       tagColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
@@ -566,7 +568,7 @@ function SocialProjects() {
       title: 'Festa das Crianças',
       subtitle: 'Alegria e Aprendizado',
       desc: 'Evento anual com brincadeiras educativas e presentes para as crianças da comunidade.',
-      image: '/images/festakid1.png',
+      image: BASE + 'images/festakid1.png',
       fallback: 'bg-gradient-to-br from-pink-900 to-purple-900/60',
       tag: 'Anual',
       tagColor: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
@@ -576,7 +578,7 @@ function SocialProjects() {
       title: 'Lendo e Aprendendo',
       subtitle: 'Literacia e Cidadania',
       desc: 'Programa de leitura e alfabetização para crianças e adultos da comunidade.',
-      image: '/images/lendo.png',
+      image: BASE + 'images/lendo.png',
       fallback: 'bg-gradient-to-br from-indigo-900 to-indigo-800/60',
       tag: 'Educação',
       tagColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30',
@@ -586,7 +588,7 @@ function SocialProjects() {
       title: 'Ponto de Cultura',
       subtitle: 'Arte e Expressão',
       desc: 'Fortalecimento de grupos artístico-culturais locais com intercâmbios e formação criativa.',
-      image: '/images/pontodecultura.png',
+      image: BASE + 'images/pontodecultura.png',
       fallback: 'bg-gradient-to-br from-orange-900 to-red-900/60',
       tag: 'Cultura',
       tagColor: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
@@ -919,12 +921,12 @@ function Transparency() {
    ════════════════════════════════════════════════════════════════════════════ */
 function Partners() {
   const partners = [
-    { src: '/images/parceiro-culturaviva.png',    alt: 'Cultura Viva' },
-    { src: '/images/parceiro-estacaodigital.png', alt: 'Estação Digital' },
-    { src: '/images/parceiro-estacaocultura.png', alt: 'Estação Cultura' },
-    { src: '/images/parceiro-fundacaobb.png',     alt: 'Fundação Banco do Brasil' },
-    { src: '/images/parceiro-josealgusto.png',    alt: 'Fundação José Augusto' },
-    { src: '/images/parceiro-ministerio.png',     alt: 'Ministério da Cultura' },
+    { src: BASE + 'images/parceiro-culturaviva.png',    alt: 'Cultura Viva' },
+    { src: BASE + 'images/parceiro-estacaodigital.png', alt: 'Estação Digital' },
+    { src: BASE + 'images/parceiro-estacaocultura.png', alt: 'Estação Cultura' },
+    { src: BASE + 'images/parceiro-fundacaobb.png',     alt: 'Fundação Banco do Brasil' },
+    { src: BASE + 'images/parceiro-josealgusto.png',    alt: 'Fundação José Augusto' },
+    { src: BASE + 'images/parceiro-ministerio.png',     alt: 'Ministério da Cultura' },
   ]
 
   return (
@@ -1113,7 +1115,7 @@ function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-white rounded-xl p-1.5 shadow-md shadow-black/40">
-                <img src="/images/Logo.jpg" alt="Fundação Potiguar" className="h-9 w-auto" />
+                <img src={BASE + 'images/Logo.jpg'} alt="Fundação Potiguar" className="h-9 w-auto" />
               </div>
               <div>
                 <div className="font-bold text-white">Fundação Potiguar</div>
