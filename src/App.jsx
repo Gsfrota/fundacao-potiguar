@@ -127,18 +127,18 @@ function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60 shadow-xl shadow-black/20'
+          ? 'bg-ivory-100/95 backdrop-blur-md border-b border-ivory-300/60 shadow-soft'
           : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         <a href="#" className="flex items-center gap-2 group">
-          <div className="bg-white rounded-xl p-1 shadow-md shadow-black/30 transition-shadow group-hover:shadow-orange-400/20">
+          <div className="bg-ivory-50 rounded-xl p-1 shadow-soft transition-shadow group-hover:shadow-lift">
             <img src={BASE + 'images/Logo.jpg'} alt="Fundação Potiguar" className="h-9 w-auto" />
           </div>
           <div className="hidden sm:block">
-            <div className="font-bold text-white text-sm leading-tight">Fundação Potiguar</div>
-            <div className="text-orange-400 text-[10px] font-semibold tracking-widest uppercase">Mossoró · RN</div>
+            <div className="font-semibold text-ink-900 text-sm leading-tight">Fundação Potiguar</div>
+            <div className="text-mist-500 text-[10px] font-semibold tracking-widest uppercase">Mossoró · RN</div>
           </div>
         </a>
 
@@ -147,7 +147,7 @@ function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="px-4 py-2 text-sm text-slate-300 hover:text-orange-400 font-medium rounded-lg hover:bg-white/5 transition-all duration-150"
+                className="px-4 py-2 text-sm text-ink-700 hover:text-mist-700 font-medium rounded-lg hover:bg-mist-100/60 transition-all duration-150"
               >
                 {l.label}
               </a>
@@ -160,25 +160,25 @@ function Navbar() {
             <IcoHeart /> Apoiar
           </a>
           <button
-            className="lg:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-white/10 transition-colors"
+            className="lg:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-ink-900/5 transition-colors"
             onClick={() => setOpen(o => !o)}
             aria-label="Abrir menu"
           >
-            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink-900 transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink-900 transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink-900 transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
         </div>
       </nav>
 
-      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${open ? 'max-h-96 border-b border-slate-800' : 'max-h-0'}`}>
-        <div className="bg-slate-950/97 backdrop-blur-md px-4 pb-4 space-y-1">
+      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${open ? 'max-h-96 border-b border-ivory-300' : 'max-h-0'}`}>
+        <div className="bg-ivory-100/97 backdrop-blur-md px-4 pb-4 space-y-1">
           {links.map(l => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2.5 text-sm text-slate-300 hover:text-orange-400 hover:bg-white/5 rounded-lg transition-all"
+              className="block px-4 py-2.5 text-sm text-ink-700 hover:text-mist-700 hover:bg-mist-100/60 rounded-lg transition-all"
             >
               {l.label}
             </a>
@@ -193,37 +193,30 @@ function Navbar() {
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
-   HERO — Logo como elemento visual principal
+   HERO
    ════════════════════════════════════════════════════════════════════════════ */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950">
-      {/* Glows decorativos */}
-      <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] bg-green-700/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-orange-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-80 h-80 bg-red-700/8 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-airy-mesh bg-ivory-100">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ── Conteúdo textual ── */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/25 mb-8">
-              <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse" />
-              <span className="text-orange-300 text-xs font-semibold tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-mist-100 border border-mist-300/60 mb-8">
+              <span className="w-1.5 h-1.5 bg-mist-500 rounded-full animate-pulse" />
+              <span className="text-mist-700 text-xs font-semibold tracking-widest uppercase">
                 Fundada em 1999 · Mossoró-RN
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.06] tracking-tight mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-ink-900 leading-[1.06] tracking-tight mb-6">
               Transformando{' '}
-              <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                Vidas
-              </span>{' '}
+              <em className="not-italic text-coral-500">Vidas</em>{' '}
               em Mossoró
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg sm:text-xl text-ink-700 leading-relaxed mb-10 max-w-xl">
               Há mais de 25 anos desenvolvemos projetos sociais, culturais e esportivos que promovem
               a dignidade, a cidadania e a inclusão das comunidades de Mossoró.
             </p>
@@ -245,8 +238,8 @@ function Hero() {
                 { val: '2', label: 'títulos de utilidade pública' },
               ].map(s => (
                 <div key={s.label} className="flex flex-col">
-                  <span className="text-3xl font-black text-orange-400">{s.val}</span>
-                  <span className="text-xs text-slate-400 font-medium mt-0.5">{s.label}</span>
+                  <span className="font-display text-3xl font-medium tabular-nums text-coral-500">{s.val}</span>
+                  <span className="text-xs text-ink-500 font-medium mt-0.5">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -255,10 +248,7 @@ function Hero() {
           {/* ── Logo como elemento visual ── */}
           <div className="flex items-center justify-center">
             <div className="relative">
-              {/* Glow atrás do card */}
-              <div className="absolute inset-0 scale-110 bg-gradient-to-br from-green-500/20 via-orange-500/10 to-red-500/20 rounded-3xl blur-2xl" />
-              {/* Card branco elevado */}
-              <div className="relative bg-white rounded-3xl p-8 lg:p-12 shadow-2xl shadow-black/60 ring-1 ring-white/20">
+              <div className="relative bg-ivory-50 rounded-3xl p-8 lg:p-12 shadow-lift ring-1 ring-ivory-300">
                 <img
                   src={BASE + 'images/Logo.jpg'}
                   alt="Logótipo da Fundação Potiguar"
@@ -266,8 +256,7 @@ function Hero() {
                   draggable={false}
                 />
               </div>
-              {/* Badge flutuante */}
-              <div className="absolute -bottom-4 -right-4 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg shadow-orange-500/40">
+              <div className="absolute -bottom-4 -right-4 bg-coral-500 text-ivory-50 text-xs font-semibold px-4 py-2 rounded-full shadow-soft">
                 Desde 1999
               </div>
             </div>
@@ -277,7 +266,7 @@ function Hero() {
 
       <a
         href="#sobre"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-500 hover:text-orange-400 transition-colors"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-ink-400 hover:text-mist-700 transition-colors"
       >
         <span className="text-[10px] font-semibold tracking-widest uppercase">Explorar</span>
         <IcoDown />
@@ -298,15 +287,15 @@ function StatsBand() {
     { icon: <IcoRadio />, val: '24h', label: 'Rádio no ar', sub: 'Programação diária' },
   ]
   return (
-    <div className="bg-gradient-to-r from-orange-700 via-orange-500 to-orange-600 py-10">
+    <div className="bg-ivory-200 py-10 border-y border-ivory-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 lg:divide-x lg:divide-orange-400/40">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 lg:divide-x lg:divide-champagne-400/40">
           {stats.map(s => (
             <div key={s.label} className="flex flex-col items-center text-center px-4 py-2">
-              <div className="text-orange-100/70 mb-1">{s.icon}</div>
-              <div className="text-3xl font-black text-white">{s.val}</div>
-              <div className="text-orange-100 font-semibold text-sm mt-0.5">{s.label}</div>
-              <div className="text-orange-200/60 text-xs mt-0.5">{s.sub}</div>
+              <div className="text-mist-500 mb-1">{s.icon}</div>
+              <div className="font-display text-3xl font-medium tabular-nums text-ink-900">{s.val}</div>
+              <div className="text-ink-900 font-semibold text-sm mt-0.5">{s.label}</div>
+              <div className="text-ink-400 text-xs mt-0.5">{s.sub}</div>
             </div>
           ))}
         </div>
@@ -320,35 +309,33 @@ function StatsBand() {
    ════════════════════════════════════════════════════════════════════════════ */
 function About() {
   const pillars = [
-    { icon: <IcoHeart />, color: 'text-orange-400', bg: 'bg-orange-500/10 border-orange-500/20', title: 'Social', desc: 'Projetos de inclusão e assistência às comunidades vulneráveis.' },
-    { icon: <IcoMusic />, color: 'text-red-400', bg: 'bg-red-500/10 border-red-500/20', title: 'Cultural', desc: 'Preservação da cultura nordestina através da arte e da tradição.' },
-    { icon: <IcoMonitor />, color: 'text-green-400', bg: 'bg-green-500/10 border-green-500/20', title: 'Digital', desc: 'Qualificação profissional e inclusão digital para jovens.' },
-    { icon: <IcoRadio />, color: 'text-blue-400', bg: 'bg-blue-500/10 border-blue-500/20', title: 'Informativo', desc: 'Rádio comunitária: voz da cidadania no ar 24 horas por dia.' },
+    { icon: <IcoHeart />, color: 'text-coral-500', bg: 'bg-coral-100/60 border-coral-300/40', title: 'Social', desc: 'Projetos de inclusão e assistência às comunidades vulneráveis.' },
+    { icon: <IcoMusic />, color: 'text-mist-500', bg: 'bg-mist-100 border-mist-300/40', title: 'Cultural', desc: 'Preservação da cultura nordestina através da arte e da tradição.' },
+    { icon: <IcoMonitor />, color: 'text-mist-700', bg: 'bg-mist-100 border-mist-300/40', title: 'Digital', desc: 'Qualificação profissional e inclusão digital para jovens.' },
+    { icon: <IcoRadio />, color: 'text-mist-500', bg: 'bg-mist-100 border-mist-300/40', title: 'Informativo', desc: 'Rádio comunitária: voz da cidadania no ar 24 horas por dia.' },
   ]
 
   return (
-    <section id="sobre" className="py-24 lg:py-32 bg-slate-950">
+    <section id="sobre" className="py-24 lg:py-32 bg-ivory-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <div className="reveal-left">
-              <span className="section-label bg-orange-500/10 text-orange-400 border border-orange-500/20 mb-4">
+              <span className="section-label bg-mist-100 text-mist-700 border border-mist-300/40 mb-4">
                 Sobre nós
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mt-3 mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-ink-900 leading-tight mt-3 mb-6">
                 Mais de duas décadas{' '}
-                <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                  transformando
-                </span>{' '}
+                <em className="not-italic text-coral-500">transformando</em>{' '}
                 vidas
               </h2>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                A <strong className="text-white">Fundação Potiguar</strong> é uma entidade privada sem fins
+              <p className="text-ink-700 leading-relaxed mb-4">
+                A <strong className="text-ink-900 font-semibold">Fundação Potiguar</strong> é uma entidade privada sem fins
                 lucrativos, dotada de autonomia administrativa e financeira. Nossa missão é desenvolver e executar
                 projetos que melhorem a qualidade de vida da população, especialmente nas áreas de desenvolvimento
                 social e de comunicação comunitária via rádio.
               </p>
-              <p className="text-slate-400 leading-relaxed mb-8">
+              <p className="text-ink-500 leading-relaxed mb-8">
                 Localizada no bairro Dom Jaime Câmara em Mossoró-RN, uma área de grande vulnerabilidade social,
                 a fundação atua com caráter social, educacional, cultural, formativo, informativo, esportivo e
                 artístico desde 15 de Novembro de 1999.
@@ -357,10 +344,10 @@ function About() {
 
             <div className="reveal-left grid grid-cols-2 gap-3">
               {pillars.map(p => (
-                <div key={p.title} className={`p-4 rounded-xl border ${p.bg} card-hover`}>
+                <div key={p.title} className={`p-4 rounded-2xl border ${p.bg} card-hover`}>
                   <div className={`${p.color} mb-2`}>{p.icon}</div>
-                  <div className="font-semibold text-white text-sm mb-1">{p.title}</div>
-                  <div className="text-slate-400 text-xs leading-relaxed">{p.desc}</div>
+                  <div className="font-semibold text-ink-900 text-sm mb-1">{p.title}</div>
+                  <div className="text-ink-500 text-xs leading-relaxed">{p.desc}</div>
                 </div>
               ))}
             </div>
@@ -372,12 +359,12 @@ function About() {
               <Img
                 src={BASE + 'images/sede.jpg'}
                 alt="Vista aérea da Sede da Fundação Potiguar"
-                className="w-full h-72 lg:h-80 object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                fallback="w-full h-72 lg:h-80 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800"
+                className="w-full h-72 lg:h-80 object-cover object-center photo-soft transition-transform duration-500 group-hover:scale-105"
+                fallback="w-full h-72 lg:h-80 bg-gradient-to-br from-mist-100 via-ivory-200 to-champagne-200"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/50 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full shadow-lg shadow-orange-900/40">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-mist-500/90 backdrop-blur-sm text-ivory-50 text-xs font-semibold rounded-full shadow-soft">
                   <IcoPin /> Vista aérea · Dom Jaime Câmara
                 </span>
               </div>
@@ -390,11 +377,11 @@ function About() {
                 <Img
                   src={BASE + 'images/fachada.jpg'}
                   alt="Fachada da Fundação Potiguar"
-                  className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
-                  fallback="w-full h-40 bg-gradient-to-br from-slate-800 to-slate-700"
+                  className="w-full h-40 object-cover photo-soft transition-transform duration-500 group-hover:scale-105"
+                  fallback="w-full h-40 bg-gradient-to-br from-mist-100 to-champagne-200"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
-                <p className="absolute bottom-2.5 left-3 text-white text-xs font-semibold tracking-wide">Fachada</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-ink-900/10 to-transparent" />
+                <p className="absolute bottom-2.5 left-3 text-ivory-50 text-xs font-semibold tracking-wide">Fachada</p>
               </div>
 
               {/* Mapa / Endereço */}
@@ -402,24 +389,24 @@ function About() {
                 <img
                   src={BASE + 'images/endereco.png'}
                   alt="Localização da Fundação Potiguar no mapa"
-                  className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-40 object-cover photo-soft transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-ink-900/10 to-transparent" />
                 <div className="absolute bottom-2.5 left-3 right-3">
-                  <p className="text-white text-xs font-semibold">Av. Antônio Bento, 44</p>
-                  <p className="text-slate-300 text-[10px] mt-0.5">Mossoró · RN</p>
+                  <p className="text-ivory-50 text-xs font-semibold">Av. Antônio Bento, 44</p>
+                  <p className="text-ivory-100/80 text-[10px] mt-0.5">Mossoró · RN</p>
                 </div>
               </div>
             </div>
 
             {/* Reconhecimento */}
-            <div className="flex items-start gap-3 p-4 bg-yellow-500/5 border border-yellow-500/15 rounded-xl">
-              <div className="w-8 h-8 bg-yellow-500/15 rounded-lg flex items-center justify-center text-yellow-400 shrink-0 mt-0.5">
+            <div className="flex items-start gap-3 p-4 bg-champagne-200/30 border border-champagne-400/40 rounded-2xl">
+              <div className="w-8 h-8 bg-champagne-200 rounded-lg flex items-center justify-center text-champagne-600 shrink-0 mt-0.5">
                 <IcoTrophy />
               </div>
               <div>
-                <p className="text-white font-semibold text-sm mb-0.5">Reconhecimento oficial</p>
-                <p className="text-slate-400 text-xs leading-relaxed">
+                <p className="text-ink-900 font-semibold text-sm mb-0.5">Reconhecimento oficial</p>
+                <p className="text-ink-500 text-xs leading-relaxed">
                   Título de Utilidade Pública concedido pelo Município de Mossoró-RN e pelo Estado do Rio Grande do Norte.
                 </p>
               </div>
@@ -436,86 +423,78 @@ function About() {
    ════════════════════════════════════════════════════════════════════════════ */
 function RadioPrograms() {
   const programs = [
-    { title: 'Pandeiro e a Viola', desc: 'Promoção da cultura nordestina: cantigas, poesia, entrevistas e a rica tradição cultural do sertão.', border: 'border-red-500/30 hover:border-red-400/60', badge: 'Cultura' },
-    { title: '98 Esporte Club', desc: 'Transmissão de jogos de futebol amador e comunitário, incentivando a participação juvenil no esporte.', border: 'border-green-500/30 hover:border-green-400/60', badge: 'Esporte' },
-    { title: 'Seresteiros da Noite', desc: 'Programa itinerante que leva a música e a cultura ao encontro das comunidades, praças e residências.', border: 'border-orange-500/30 hover:border-orange-400/60', badge: 'Itinerante' },
-    { title: 'Festival de Artistas da Terra', desc: 'Festival eclético que divulga e valoriza artistas locais de todos os estilos musicais da região.', border: 'border-purple-500/30 hover:border-purple-400/60', badge: 'Festival' },
-    { title: '98 Comunidades', desc: 'Transmissões ao vivo de praças, residências e feiras — a voz real das comunidades de Mossoró.', border: 'border-blue-500/30 hover:border-blue-400/60', badge: 'Comunidade' },
+    { title: 'Pandeiro e a Viola', desc: 'Promoção da cultura nordestina: cantigas, poesia, entrevistas e a rica tradição cultural do sertão.', badge: 'Cultura' },
+    { title: '98 Esporte Club', desc: 'Transmissão de jogos de futebol amador e comunitário, incentivando a participação juvenil no esporte.', badge: 'Esporte' },
+    { title: 'Seresteiros da Noite', desc: 'Programa itinerante que leva a música e a cultura ao encontro das comunidades, praças e residências.', badge: 'Itinerante' },
+    { title: 'Festival de Artistas da Terra', desc: 'Festival eclético que divulga e valoriza artistas locais de todos os estilos musicais da região.', badge: 'Festival' },
+    { title: '98 Comunidades', desc: 'Transmissões ao vivo de praças, residências e feiras — a voz real das comunidades de Mossoró.', badge: 'Comunidade' },
   ]
 
   return (
-    <section id="radio" className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-red-950/20 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/25 to-transparent" />
-
+    <section id="radio" className="py-24 lg:py-32 bg-ivory-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal">
-          <span className="section-label bg-red-500/10 text-red-400 border border-red-500/20 mb-4">
+          <span className="section-label bg-mist-100 text-mist-700 border border-mist-300/40 mb-4">
             <IcoRadio /> Rádio Comunitária
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
-            A voz da{' '}
-            <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-              cidadania
-            </span>{' '}
-            no ar
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-ink-900 mt-3 mb-4">
+            A voz da <em className="not-italic text-mist-500">cidadania</em> no ar
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-ink-500 max-w-2xl mx-auto leading-relaxed">
             Programação 24 horas com música, cultura, cidadania e educação.
             Nossa rádio é uma imprensa livre a serviço da comunidade.
           </p>
         </div>
 
-        {/* Foto do estúdio + cards em grid */}
         <div className="reveal grid lg:grid-cols-3 gap-5">
 
-          {/* Foto do estúdio — ocupa coluna completa na esquerda */}
-          <div className="lg:col-span-1 lg:row-span-3 relative overflow-hidden rounded-2xl">
+          {/* Foto do estúdio — ilha escura */}
+          <div className="lg:col-span-1 lg:row-span-3 relative overflow-hidden rounded-2xl bg-ink-900">
             <img
               src={BASE + 'images/radio.png'}
               alt="Estúdio da Rádio 98 FM"
-              className="w-full h-64 lg:h-full object-cover"
+              className="w-full h-64 lg:h-full object-cover opacity-60 photo-soft"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-900/90 via-ink-900/30 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full mb-2">
-                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" /> AO VIVO · 24H
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-ember-500/20 text-ember-500 text-xs font-semibold rounded-full mb-3 tracking-wider">
+                <span className="w-1.5 h-1.5 bg-ember-500 rounded-full animate-pulse" /> AO VIVO · 24H
               </span>
-              <p className="text-white font-bold text-lg leading-tight">Rádio 98 FM</p>
-              <p className="text-slate-300 text-xs mt-1">Mossoró-RN</p>
+              <p className="font-display text-6xl font-medium text-ivory-100 leading-none">98</p>
+              <p className="text-mist-300 text-sm font-medium mt-1">FM · Mossoró-RN</p>
             </div>
           </div>
 
-          {/* Programas — 2 colunas × 3 linhas */}
+          {/* Programas */}
           {programs.map((p, i) => (
             <div
               key={p.title}
-              className={`group p-5 bg-slate-800/50 rounded-2xl border ${p.border} transition-all duration-300 card-hover`}
+              className="group p-5 bg-ivory-100 rounded-2xl ring-1 ring-ivory-300/60 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all duration-500"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="flex items-start justify-between mb-3">
-                <div className="w-9 h-9 bg-red-500/15 rounded-xl flex items-center justify-center text-red-400">
+                <div className="w-9 h-9 bg-mist-100 rounded-xl flex items-center justify-center text-mist-700">
                   <IcoRadio />
                 </div>
-                <span className="text-xs font-semibold text-slate-500 bg-slate-700/60 px-2.5 py-1 rounded-full">
+                <span className="text-xs font-medium text-ink-500 bg-ivory-200 px-2.5 py-1 rounded-full">
                   {p.badge}
                 </span>
               </div>
-              <h3 className="text-white font-bold text-base mb-1.5 group-hover:text-red-300 transition-colors">
+              <h3 className="text-ink-900 font-semibold text-base mb-1.5 group-hover:text-mist-700 transition-colors">
                 {p.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{p.desc}</p>
+              <p className="text-ink-500 text-sm leading-relaxed">{p.desc}</p>
             </div>
           ))}
 
           {/* CTA */}
-          <div className="p-5 bg-gradient-to-br from-red-600/15 via-red-500/8 to-orange-500/8 rounded-2xl border border-red-500/25 flex flex-col justify-between">
+          <div className="p-5 bg-mist-100 rounded-2xl ring-1 ring-mist-300/40 shadow-soft flex flex-col justify-between">
             <div>
-              <div className="w-9 h-9 bg-red-500 rounded-xl flex items-center justify-center text-white mb-3">
+              <div className="w-9 h-9 bg-mist-500 rounded-xl flex items-center justify-center text-ivory-50 mb-3">
                 <IcoMail />
               </div>
-              <h3 className="text-white font-bold text-base mb-1.5">Fale com a Rádio</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-4">
+              <h3 className="text-ink-900 font-semibold text-base mb-1.5">Fale com a Rádio</h3>
+              <p className="text-ink-700 text-sm leading-relaxed mb-4">
                 Sugestão de pauta ou quer participar de um programa?
               </p>
             </div>
@@ -539,9 +518,9 @@ function SocialProjects() {
       subtitle: 'Resgate Cultural Afro-Brasileiro',
       desc: 'A convivência entre culturas e o resgate da dignidade do povo negro evidenciados pelo projeto de capoeira — uma alavanca para o conhecimento histórico-cultural afro-brasileiro.',
       image: BASE + 'images/capoeira.png',
-      fallback: 'bg-gradient-to-br from-yellow-900 via-amber-800/80 to-orange-900',
+      fallback: 'bg-gradient-to-br from-champagne-400 to-coral-300',
       tag: '60 crianças/dia',
-      tagColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30',
+      tagColor: 'bg-ivory-50/20 text-ivory-50 border-ivory-50/30',
       large: true,
     },
     {
@@ -549,9 +528,9 @@ function SocialProjects() {
       subtitle: 'Disciplina e Saúde',
       desc: 'Time juvenil que ensina disciplina, saúde e trabalho em equipa para crianças do bairro.',
       image: BASE + 'images/futebol.png',
-      fallback: 'bg-gradient-to-br from-green-900 to-green-800/60',
+      fallback: 'bg-gradient-to-br from-mist-300 to-mist-100',
       tag: 'Esporte',
-      tagColor: 'bg-green-500/20 text-green-300 border-green-500/30',
+      tagColor: 'bg-ivory-50/20 text-ivory-50 border-ivory-50/30',
       large: false,
     },
     {
@@ -559,9 +538,9 @@ function SocialProjects() {
       subtitle: '+700 certificados',
       desc: 'Cursos de informática básica que certificaram mais de 700 pessoas, transformando o acesso à tecnologia.',
       image: BASE + 'images/inclusaodigital.png',
-      fallback: 'bg-gradient-to-br from-blue-900 to-blue-800/60',
+      fallback: 'bg-gradient-to-br from-mist-300 to-mist-100',
       tag: '700+ certificados',
-      tagColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+      tagColor: 'bg-ivory-50/20 text-ivory-50 border-ivory-50/30',
       large: false,
     },
     {
@@ -569,9 +548,9 @@ function SocialProjects() {
       subtitle: 'Alegria e Aprendizado',
       desc: 'Evento anual com brincadeiras educativas e presentes para as crianças da comunidade.',
       image: BASE + 'images/festakid1.png',
-      fallback: 'bg-gradient-to-br from-pink-900 to-purple-900/60',
+      fallback: 'bg-gradient-to-br from-coral-300 to-champagne-400',
       tag: 'Anual',
-      tagColor: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
+      tagColor: 'bg-ivory-50/20 text-ivory-50 border-ivory-50/30',
       large: false,
     },
     {
@@ -579,9 +558,9 @@ function SocialProjects() {
       subtitle: 'Literacia e Cidadania',
       desc: 'Programa de leitura e alfabetização para crianças e adultos da comunidade.',
       image: BASE + 'images/lendo.png',
-      fallback: 'bg-gradient-to-br from-indigo-900 to-indigo-800/60',
+      fallback: 'bg-gradient-to-br from-mist-100 to-mist-300',
       tag: 'Educação',
-      tagColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30',
+      tagColor: 'bg-ivory-50/20 text-ivory-50 border-ivory-50/30',
       large: false,
     },
     {
@@ -589,51 +568,46 @@ function SocialProjects() {
       subtitle: 'Arte e Expressão',
       desc: 'Fortalecimento de grupos artístico-culturais locais com intercâmbios e formação criativa.',
       image: BASE + 'images/pontodecultura.png',
-      fallback: 'bg-gradient-to-br from-orange-900 to-red-900/60',
+      fallback: 'bg-gradient-to-br from-coral-300 to-champagne-200',
       tag: 'Cultura',
-      tagColor: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
+      tagColor: 'bg-ivory-50/20 text-ivory-50 border-ivory-50/30',
       large: false,
     },
   ]
 
   return (
-    <section id="projetos" className="py-24 lg:py-32 bg-slate-950 relative">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
-
+    <section id="projetos" className="py-24 lg:py-32 bg-ivory-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal">
-          <span className="section-label bg-green-500/10 text-green-400 border border-green-500/20 mb-4">
+          <span className="section-label bg-mist-100 text-mist-700 border border-mist-300/40 mb-4">
             <IcoUsers /> Projetos Sociais
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
-            Ação social que{' '}
-            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-              transforma
-            </span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-ink-900 mt-3 mb-4">
+            Ação social que <em className="not-italic text-mist-500">transforma</em>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-ink-500 max-w-2xl mx-auto">
             Projetos em diversas frentes que impactam diretamente crianças, jovens e famílias.
           </p>
         </div>
 
         {/* Bento grid */}
         <div className="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Featured capoeira card — spans 2×2 */}
-          <div className="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 card-hover lg:col-span-2 lg:row-span-2">
+          {/* Featured capoeira card */}
+          <div className="group relative overflow-hidden rounded-3xl bg-ivory-200 ring-1 ring-ivory-300/60 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all duration-500 lg:col-span-2 lg:row-span-2">
             <Img
               src={projects[0].image}
               alt={projects[0].title}
-              className="w-full h-72 lg:h-[480px] object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-72 lg:h-[480px] object-cover photo-soft transition-transform duration-500 group-hover:scale-105"
               fallback={`w-full h-72 lg:h-[480px] ${projects[0].fallback}`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <span className={`inline-block text-[11px] font-semibold px-3 py-1 rounded-full border mb-3 ${projects[0].tagColor}`}>
                 {projects[0].tag}
               </span>
-              <h3 className="text-white font-black text-2xl leading-tight">{projects[0].title}</h3>
-              <p className="text-slate-300 text-sm mt-1 mb-3">{projects[0].subtitle}</p>
-              <p className="text-slate-400 text-sm leading-relaxed">{projects[0].desc}</p>
+              <h3 className="font-display text-ivory-50 font-medium text-2xl leading-tight">{projects[0].title}</h3>
+              <p className="text-ivory-100/80 text-sm mt-1 mb-3">{projects[0].subtitle}</p>
+              <p className="text-ivory-100/70 text-sm leading-relaxed">{projects[0].desc}</p>
             </div>
           </div>
 
@@ -641,22 +615,22 @@ function SocialProjects() {
           {projects.slice(1).map((p, i) => (
             <div
               key={p.title}
-              className="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 card-hover"
+              className="group relative overflow-hidden rounded-3xl bg-ivory-200 ring-1 ring-ivory-300/60 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all duration-500"
               style={{ transitionDelay: `${(i + 1) * 50}ms` }}
             >
               <Img
                 src={p.image}
                 alt={p.title}
-                className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-44 object-cover photo-soft transition-transform duration-500 group-hover:scale-105"
                 fallback={`w-full h-44 ${p.fallback}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <span className={`inline-block text-[10px] font-semibold px-2.5 py-1 rounded-full border mb-2 ${p.tagColor}`}>
                   {p.tag}
                 </span>
-                <h3 className="text-white font-bold text-base leading-tight">{p.title}</h3>
-                <p className="text-slate-400 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="font-display text-ivory-50 font-medium text-base leading-tight">{p.title}</h3>
+                <p className="text-ivory-100/70 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {p.subtitle}
                 </p>
               </div>
@@ -682,47 +656,38 @@ function History() {
   ]
 
   return (
-    <section id="historia" className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.05),transparent_60%)] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-
+    <section id="historia" className="py-24 lg:py-32 bg-ivory-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal">
-          <span className="section-label bg-slate-700/60 text-slate-300 border border-slate-600 mb-4">
+          <span className="section-label bg-ivory-300/60 text-ink-700 border border-ivory-300 mb-4">
             Nossa História
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
-            25 anos de{' '}
-            <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-              dedicação
-            </span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-ink-900 mt-3 mb-4">
+            25 anos de <em className="not-italic text-coral-500">dedicação</em>
           </h2>
         </div>
 
         <div className="reveal grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Feature card */}
-          <div className="lg:col-span-2 relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-orange-600/15 via-orange-500/8 to-slate-900 border border-orange-500/20">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-orange-500/8 rounded-full blur-2xl pointer-events-none" />
+          <div className="lg:col-span-2 relative overflow-hidden rounded-3xl p-8 bg-ivory-100 ring-1 ring-ivory-300/60 shadow-soft">
             <div className="relative">
-              <div className="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center text-orange-400 font-black text-xl mb-6">
+              <div className="w-14 h-14 bg-mist-100 rounded-2xl flex items-center justify-center text-mist-700 font-display font-medium text-xl mb-6">
                 25
               </div>
-              <h3 className="text-2xl lg:text-3xl font-black text-white mb-5">
+              <h3 className="font-display text-2xl lg:text-3xl font-medium text-ink-900 mb-5">
                 Uma história de luta{' '}
-                <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                  pela igualdade
-                </span>
+                <em className="not-italic text-coral-500">pela igualdade</em>
               </h3>
-              <blockquote className="border-l-2 border-orange-500 pl-5 mb-6">
-                <p className="text-slate-300 italic leading-relaxed">
+              <blockquote className="border-l-2 border-mist-500 pl-5 mb-6">
+                <p className="text-ink-700 italic leading-relaxed font-display font-medium text-lg">
                   "Lutar pela Igualdade sempre que as diferenças nos discriminem.
                   Lutar pela diferença sempre que a igualdade nos descaracterize."
                 </p>
-                <cite className="text-slate-500 text-sm mt-2 block not-italic">
+                <cite className="text-ink-500 text-sm mt-2 block not-italic">
                   — Boaventura de Souza Santos
                 </cite>
               </blockquote>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-ink-700 leading-relaxed">
                 A Fundação Potiguar nasceu da necessidade de dar voz e oportunidade às comunidades
                 periféricas de Mossoró. Com caráter social, educacional, cultural, esportivo e artístico,
                 nossa trajetória é marcada por conquistas coletivas e pelo compromisso com a cidadania.
@@ -735,16 +700,16 @@ function History() {
             {milestones.slice(0, 3).map((m, i) => (
               <div
                 key={m.year}
-                className={`p-5 rounded-2xl border card-hover flex-1 ${
+                className={`p-5 rounded-2xl ring-1 card-hover flex-1 ${
                   i === 0
-                    ? 'bg-orange-500/8 border-orange-500/25'
-                    : 'bg-slate-800/40 border-slate-700/50'
+                    ? 'bg-mist-100 ring-mist-300/40'
+                    : 'bg-ivory-100 ring-ivory-300/60'
                 }`}
               >
-                <div className={`text-xl font-black mb-1.5 ${i === 0 ? 'text-orange-400' : 'text-slate-300'}`}>
+                <div className={`font-display text-xl font-medium mb-1.5 ${i === 0 ? 'text-mist-700' : 'text-ink-900'}`}>
                   {m.year}
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed">{m.event}</p>
+                <p className="text-ink-500 text-sm leading-relaxed">{m.event}</p>
               </div>
             ))}
           </div>
@@ -754,16 +719,16 @@ function History() {
             {milestones.slice(3).map((m, i) => (
               <div
                 key={m.year}
-                className={`p-5 rounded-2xl border card-hover ${
+                className={`p-5 rounded-2xl ring-1 card-hover ${
                   i === 2
-                    ? 'bg-green-500/8 border-green-500/25'
-                    : 'bg-slate-800/40 border-slate-700/50'
+                    ? 'bg-mist-100 ring-mist-300/40'
+                    : 'bg-ivory-100 ring-ivory-300/60'
                 }`}
               >
-                <div className={`text-xl font-black mb-1.5 ${i === 2 ? 'text-green-400' : 'text-slate-300'}`}>
+                <div className={`font-display text-xl font-medium mb-1.5 ${i === 2 ? 'text-mist-700' : 'text-coral-500'}`}>
                   {m.year}
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed">{m.event}</p>
+                <p className="text-ink-500 text-sm leading-relaxed">{m.event}</p>
               </div>
             ))}
           </div>
@@ -778,37 +743,32 @@ function History() {
    ════════════════════════════════════════════════════════════════════════════ */
 function Transparency() {
   return (
-    <section id="transparencia" className="py-24 lg:py-32 bg-slate-950 relative">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-
+    <section id="transparencia" className="py-24 lg:py-32 bg-ivory-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal">
-          <span className="section-label bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-4">
+          <span className="section-label bg-mist-100 text-mist-700 border border-mist-300/40 mb-4">
             Transparência
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
-            Gestão{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              transparente
-            </span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-ink-900 mt-3 mb-4">
+            Gestão <em className="not-italic text-mist-500">transparente</em>
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto">
+          <p className="text-ink-500 max-w-xl mx-auto">
             Comprometidos com a transparência e o controle social em todas as nossas ações.
           </p>
         </div>
 
         <div className="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Institutional data */}
-          <div className="lg:col-span-2 p-7 bg-slate-900 rounded-2xl border border-slate-700/50 card-hover">
+          <div className="lg:col-span-2 p-7 bg-ivory-200 rounded-2xl ring-1 ring-ivory-300/60 shadow-soft card-hover">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-blue-500/15 rounded-xl flex items-center justify-center text-blue-400 shrink-0">
+              <div className="w-12 h-12 bg-mist-100 rounded-xl flex items-center justify-center text-mist-700 shrink-0">
                 <IcoTrophy />
               </div>
               <div className="flex-1">
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-1">
+                <div className="text-xs font-semibold text-ink-500 uppercase tracking-widest mb-1">
                   Dados Institucionais
                 </div>
-                <div className="text-white font-bold text-lg mb-3">Fundação Potiguar</div>
+                <div className="text-ink-900 font-semibold text-lg mb-3">Fundação Potiguar</div>
                 <dl className="space-y-2">
                   {[
                     { dt: 'CNPJ', dd: '03.536.100/0001-25', mono: true },
@@ -816,8 +776,8 @@ function Transparency() {
                     { dt: 'Fundação', dd: '15 de Novembro de 1999' },
                   ].map(r => (
                     <div key={r.dt} className="flex gap-3 text-sm">
-                      <dt className="text-slate-500 w-16 shrink-0">{r.dt}</dt>
-                      <dd className={`text-slate-200 ${r.mono ? 'font-mono' : ''}`}>{r.dd}</dd>
+                      <dt className="text-ink-500 w-16 shrink-0">{r.dt}</dt>
+                      <dd className={`text-ink-900 ${r.mono ? 'font-mono' : ''}`}>{r.dd}</dd>
                     </div>
                   ))}
                 </dl>
@@ -826,12 +786,12 @@ function Transparency() {
           </div>
 
           {/* Address */}
-          <div className="p-6 bg-slate-900 rounded-2xl border border-slate-700/50 card-hover">
-            <div className="w-10 h-10 bg-orange-500/15 rounded-xl flex items-center justify-center text-orange-400 mb-4">
+          <div className="p-6 bg-ivory-200 rounded-2xl ring-1 ring-ivory-300/60 shadow-soft card-hover">
+            <div className="w-10 h-10 bg-coral-100 rounded-xl flex items-center justify-center text-coral-600 mb-4">
               <IcoPin />
             </div>
-            <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-2">Endereço</div>
-            <p className="text-slate-200 text-sm leading-relaxed">
+            <div className="text-xs font-semibold text-ink-500 uppercase tracking-widest mb-2">Endereço</div>
+            <p className="text-ink-900 text-sm leading-relaxed">
               Av. Antônio Bento, nº 44<br />
               Dom Jaime Câmara<br />
               Mossoró-RN
@@ -839,17 +799,17 @@ function Transparency() {
           </div>
 
           {/* Contact */}
-          <div className="p-6 bg-slate-900 rounded-2xl border border-slate-700/50 card-hover">
-            <div className="w-10 h-10 bg-green-500/15 rounded-xl flex items-center justify-center text-green-400 mb-4">
+          <div className="p-6 bg-ivory-200 rounded-2xl ring-1 ring-ivory-300/60 shadow-soft card-hover">
+            <div className="w-10 h-10 bg-mist-100 rounded-xl flex items-center justify-center text-mist-700 mb-4">
               <IcoPhone />
             </div>
-            <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-2">Contacto</div>
+            <div className="text-xs font-semibold text-ink-500 uppercase tracking-widest mb-2">Contacto</div>
             <div className="space-y-1.5">
-              <p className="text-slate-200 text-sm">(84) 3312-5656</p>
-              <p className="text-slate-200 text-sm">(84) 9 9136-2980</p>
+              <p className="text-ink-900 text-sm">(84) 3312-5656</p>
+              <p className="text-ink-900 text-sm">(84) 9 9136-2980</p>
               <a
                 href="mailto:fundacaopotiguar@gmail.com"
-                className="text-orange-400 text-xs hover:text-orange-300 transition-colors break-all block mt-2"
+                className="text-mist-700 text-xs hover:text-mist-500 transition-colors break-all block mt-2"
               >
                 fundacaopotiguar@gmail.com
               </a>
@@ -857,11 +817,11 @@ function Transparency() {
           </div>
 
           {/* Titles */}
-          <div className="lg:col-span-2 p-7 bg-gradient-to-br from-yellow-950/40 to-slate-900 rounded-2xl border border-yellow-500/20 card-hover">
-            <div className="w-10 h-10 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 mb-4">
+          <div className="lg:col-span-2 p-7 bg-champagne-200/40 rounded-2xl ring-1 ring-champagne-400/40 shadow-soft card-hover">
+            <div className="w-10 h-10 bg-champagne-200 rounded-xl flex items-center justify-center text-champagne-600 mb-4">
               <IcoStar />
             </div>
-            <div className="text-xs font-semibold text-yellow-600/80 uppercase tracking-widest mb-4">
+            <div className="text-xs font-semibold text-champagne-600 uppercase tracking-widest mb-4">
               Títulos Recebidos
             </div>
             <div className="space-y-4">
@@ -870,10 +830,10 @@ function Transparency() {
                 { title: 'Utilidade Pública Estadual', body: 'Título concedido pelo Estado do Rio Grande do Norte.' },
               ].map(t => (
                 <div key={t.title} className="flex gap-3 items-start">
-                  <IcoStar className="w-4 h-4 text-yellow-400 mt-0.5 shrink-0" />
+                  <IcoStar className="w-4 h-4 text-champagne-600 mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-yellow-200 font-semibold text-sm">{t.title}</div>
-                    <div className="text-slate-400 text-xs mt-0.5">{t.body}</div>
+                    <div className="text-ink-900 font-semibold text-sm">{t.title}</div>
+                    <div className="text-ink-500 text-xs mt-0.5">{t.body}</div>
                   </div>
                 </div>
               ))}
@@ -881,33 +841,33 @@ function Transparency() {
           </div>
 
           {/* COMDICA years */}
-          <div className="p-6 bg-slate-900 rounded-2xl border border-slate-700/50 card-hover text-center">
-            <div className="text-5xl font-black text-white mb-1">6</div>
-            <div className="text-slate-300 text-sm font-semibold">anos no COMDICA</div>
-            <div className="text-slate-500 text-xs mt-1">2009 – 2015</div>
-            <div className="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-500 leading-relaxed">
+          <div className="p-6 bg-ivory-200 rounded-2xl ring-1 ring-ivory-300/60 shadow-soft card-hover text-center">
+            <div className="font-display text-5xl font-medium text-ink-900 mb-1">6</div>
+            <div className="text-ink-700 text-sm font-semibold">anos no COMDICA</div>
+            <div className="text-ink-400 text-xs mt-1">2009 – 2015</div>
+            <div className="mt-4 pt-4 border-t border-ivory-300 text-xs text-ink-500 leading-relaxed">
               Conselho Municipal dos Direitos da Criança e do Adolescente
             </div>
           </div>
 
           {/* Leadership roles */}
-          <div className="p-6 bg-gradient-to-br from-orange-950/30 to-slate-900 rounded-2xl border border-orange-500/15 card-hover">
+          <div className="p-6 bg-ivory-200 rounded-2xl ring-1 ring-ivory-300/60 shadow-soft card-hover">
             <div className="space-y-4">
               {[
-                { role: 'Vice-Presidente', period: '2009–12', color: 'bg-orange-500', textColor: 'text-orange-400', w: 'w-1/2' },
-                { role: 'Presidente', period: '2013–15', color: 'bg-green-500', textColor: 'text-green-400', w: 'w-1/3' },
+                { role: 'Vice-Presidente', period: '2009–12', color: 'bg-coral-500', textColor: 'text-coral-500', w: 'w-1/2' },
+                { role: 'Presidente', period: '2013–15', color: 'bg-mist-500', textColor: 'text-mist-700', w: 'w-1/3' },
               ].map(r => (
                 <div key={r.role}>
                   <div className="flex justify-between items-center mb-1.5">
-                    <span className="text-slate-400 text-xs">{r.role}</span>
+                    <span className="text-ink-500 text-xs">{r.role}</span>
                     <span className={`${r.textColor} font-semibold text-sm`}>{r.period}</span>
                   </div>
-                  <div className="w-full h-1.5 bg-slate-800 rounded-full">
+                  <div className="w-full h-1.5 bg-ivory-300 rounded-full">
                     <div className={`h-full ${r.color} rounded-full ${r.w}`} />
                   </div>
                 </div>
               ))}
-              <p className="text-slate-500 text-xs pt-1">Liderança no COMDICA</p>
+              <p className="text-ink-400 text-xs pt-1">Liderança no COMDICA</p>
             </div>
           </div>
         </div>
@@ -930,21 +890,16 @@ function Partners() {
   ]
 
   return (
-    <section id="parceiros" className="py-20 lg:py-28 bg-slate-900 relative">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-
+    <section id="parceiros" className="py-20 lg:py-28 bg-ivory-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 reveal">
-          <span className="section-label bg-slate-700/60 text-slate-300 border border-slate-600 mb-4">
+          <span className="section-label bg-ivory-300/60 text-ink-700 border border-ivory-300 mb-4">
             Parceiros
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white mt-3 mb-3">
-            Quem acredita na nossa{' '}
-            <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-              missão
-            </span>
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-ink-900 mt-3 mb-3">
+            Quem acredita na nossa <em className="not-italic text-mist-500">missão</em>
           </h2>
-          <p className="text-slate-400 text-sm max-w-lg mx-auto">
+          <p className="text-ink-500 text-sm max-w-lg mx-auto">
             Instituições públicas e privadas que tornam os nossos projetos possíveis.
           </p>
         </div>
@@ -953,7 +908,7 @@ function Partners() {
           {partners.map(p => (
             <div
               key={p.alt}
-              className="group bg-white rounded-2xl p-4 flex items-center justify-center aspect-square card-hover shadow-lg shadow-black/20"
+              className="group bg-ivory-50 rounded-2xl p-4 flex items-center justify-center aspect-square card-hover shadow-soft ring-1 ring-champagne-200"
             >
               <img
                 src={p.src}
@@ -982,23 +937,17 @@ function Contact() {
   }
 
   return (
-    <section id="contato" className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(249,115,22,0.05),transparent_60%)] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-
+    <section id="contato" className="py-24 lg:py-32 bg-airy-mesh bg-ivory-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="reveal-left">
-            <span className="section-label bg-orange-500/10 text-orange-400 border border-orange-500/20 mb-4">
+            <span className="section-label bg-coral-100 text-coral-700 border border-coral-300/40 mb-4">
               Contato
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mt-3 mb-6">
-              Fale com a{' '}
-              <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                Fundação
-              </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-medium text-ink-900 mt-3 mb-6">
+              Fale com a <em className="not-italic text-coral-500">Fundação</em>
             </h2>
-            <p className="text-slate-400 leading-relaxed mb-8">
+            <p className="text-ink-700 leading-relaxed mb-8">
               Tem perguntas sobre nossos projetos, quer voluntariar ou apoiar a fundação?
               Estamos sempre abertos ao diálogo.
             </p>
@@ -1010,19 +959,19 @@ function Contact() {
                 { icon: <IcoMail />, label: 'E-mail', value: 'fundacaopotiguar@gmail.com', href: 'mailto:fundacaopotiguar@gmail.com' },
               ].map(c => (
                 <div key={c.label} className="flex gap-4 items-start">
-                  <div className="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 bg-mist-100 rounded-xl flex items-center justify-center text-mist-700 shrink-0 mt-0.5">
                     {c.icon}
                   </div>
                   <div>
-                    <div className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-0.5">
+                    <div className="text-ink-400 text-xs font-semibold uppercase tracking-wide mb-0.5">
                       {c.label}
                     </div>
                     {c.href ? (
-                      <a href={c.href} className="text-slate-200 hover:text-orange-400 transition-colors text-sm">
+                      <a href={c.href} className="text-ink-900 hover:text-mist-700 transition-colors text-sm">
                         {c.value}
                       </a>
                     ) : (
-                      <p className="text-slate-200 text-sm">{c.value}</p>
+                      <p className="text-ink-900 text-sm">{c.value}</p>
                     )}
                   </div>
                 </div>
@@ -1033,7 +982,7 @@ function Contact() {
           <div className="reveal-right">
             <form
               onSubmit={handleSubmit}
-              className="bg-slate-900/80 backdrop-blur-md border border-slate-700/50 rounded-2xl p-7 space-y-5"
+              className="bg-ivory-100 ring-1 ring-ivory-300/60 shadow-soft rounded-2xl p-7 space-y-5"
             >
               <div className="grid grid-cols-2 gap-4">
                 {[
@@ -1041,24 +990,24 @@ function Contact() {
                   { label: 'E-mail', type: 'email', placeholder: 'seu@email.com' },
                 ].map(f => (
                   <div key={f.label}>
-                    <label className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5 block">
+                    <label className="text-xs font-semibold text-ink-500 uppercase tracking-wide mb-1.5 block">
                       {f.label}
                     </label>
                     <input
                       required
                       type={f.type}
                       placeholder={f.placeholder}
-                      className="w-full bg-slate-800/60 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
+                      className="w-full bg-ivory-200 ring-1 ring-ivory-300 text-ink-900 placeholder-ink-400 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-mist-500 transition-all"
                     />
                   </div>
                 ))}
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5 block">
+                <label className="text-xs font-semibold text-ink-500 uppercase tracking-wide mb-1.5 block">
                   Assunto
                 </label>
-                <select className="w-full bg-slate-800/60 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                <select className="w-full bg-ivory-200 ring-1 ring-ivory-300 text-ink-900 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-mist-500 transition-all">
                   {['Projetos sociais', 'Rádio comunitária', 'Voluntariado', 'Doação / Apoio', 'Outro'].map(o => (
                     <option key={o}>{o}</option>
                   ))}
@@ -1066,19 +1015,19 @@ function Contact() {
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5 block">
+                <label className="text-xs font-semibold text-ink-500 uppercase tracking-wide mb-1.5 block">
                   Mensagem
                 </label>
                 <textarea
                   required
                   rows={5}
                   placeholder="Escreva sua mensagem..."
-                  className="w-full bg-slate-800/60 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                  className="w-full bg-ivory-200 ring-1 ring-ivory-300 text-ink-900 placeholder-ink-400 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-mist-500 transition-all resize-none"
                 />
               </div>
 
               {sent ? (
-                <div className="w-full py-3 bg-green-500/15 border border-green-500/30 text-green-400 rounded-xl text-sm text-center font-semibold">
+                <div className="w-full py-3 bg-mist-100 ring-1 ring-mist-300/60 text-mist-700 rounded-2xl text-sm text-center font-semibold">
                   Mensagem enviada! Obrigado pelo contato.
                 </div>
               ) : (
@@ -1109,31 +1058,31 @@ function Footer() {
   ]
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-800">
+    <footer className="bg-ivory-200 border-t border-ivory-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-white rounded-xl p-1.5 shadow-md shadow-black/40">
+              <div className="bg-ivory-50 rounded-xl p-1.5 shadow-soft">
                 <img src={BASE + 'images/Logo.jpg'} alt="Fundação Potiguar" className="h-9 w-auto" />
               </div>
               <div>
-                <div className="font-bold text-white">Fundação Potiguar</div>
-                <div className="text-orange-400 text-xs font-semibold tracking-widest uppercase">Mossoró · RN</div>
+                <div className="font-semibold text-ink-900">Fundação Potiguar</div>
+                <div className="text-mist-500 text-xs font-semibold tracking-widest uppercase">Mossoró · RN</div>
               </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-4">
+            <p className="text-ink-700 text-sm leading-relaxed max-w-xs mb-4">
               Transformando vidas através de projetos sociais, cultura e comunicação comunitária desde 1999.
             </p>
-            <p className="text-slate-700 text-xs">CNPJ 03.536.100/0001-25</p>
+            <p className="text-ink-400 text-xs">CNPJ 03.536.100/0001-25</p>
           </div>
 
           <div>
-            <div className="text-white font-semibold text-sm mb-4">Navegação</div>
+            <div className="text-ink-900 font-semibold text-sm mb-4">Navegação</div>
             <ul className="space-y-2.5">
               {navLinks.map(([href, label]) => (
                 <li key={href}>
-                  <a href={href} className="text-slate-400 hover:text-orange-400 text-sm transition-colors">
+                  <a href={href} className="text-ink-700 hover:text-mist-700 text-sm transition-colors">
                     {label}
                   </a>
                 </li>
@@ -1142,16 +1091,16 @@ function Footer() {
           </div>
 
           <div>
-            <div className="text-white font-semibold text-sm mb-4">Contacto</div>
+            <div className="text-ink-900 font-semibold text-sm mb-4">Contacto</div>
             <div className="space-y-2">
-              <p className="text-slate-400 text-sm">Av. Antônio Bento, 44</p>
-              <p className="text-slate-400 text-sm">Dom Jaime Câmara · Mossoró-RN</p>
-              <a href="tel:+558433125656" className="text-slate-400 hover:text-orange-400 text-sm transition-colors block mt-3">
+              <p className="text-ink-700 text-sm">Av. Antônio Bento, 44</p>
+              <p className="text-ink-700 text-sm">Dom Jaime Câmara · Mossoró-RN</p>
+              <a href="tel:+558433125656" className="text-ink-700 hover:text-mist-700 text-sm transition-colors block mt-3">
                 (84) 3312-5656
               </a>
               <a
                 href="mailto:fundacaopotiguar@gmail.com"
-                className="text-slate-400 hover:text-orange-400 text-xs transition-colors block break-all"
+                className="text-ink-700 hover:text-mist-700 text-xs transition-colors block break-all"
               >
                 fundacaopotiguar@gmail.com
               </a>
@@ -1159,11 +1108,11 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800/60 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-slate-600 text-xs">
+        <div className="border-t border-ivory-300/60 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-ink-500 text-xs">
             © {year} Fundação Potiguar. Todos os direitos reservados.
           </p>
-          <p className="text-slate-700 text-xs">
+          <p className="text-ink-400 text-xs">
             Desenvolvido com dedicação à comunidade de Mossoró
           </p>
         </div>

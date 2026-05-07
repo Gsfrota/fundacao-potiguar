@@ -10,11 +10,11 @@
   }
 
   body {
-    @apply bg-slate-950 text-slate-100 font-sans;
+    @apply bg-ivory-100 text-ink-700 font-sans;
   }
 
   ::selection {
-    @apply bg-orange-500 text-white;
+    @apply bg-mist-100 text-ink-900;
   }
 
   ::-webkit-scrollbar {
@@ -22,20 +22,20 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-900;
+    @apply bg-ivory-200;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-orange-500 rounded-full;
+    @apply bg-mist-300 rounded-full;
   }
 }
 
 @layer components {
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(14px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .reveal.visible {
@@ -45,9 +45,9 @@
 
   .reveal-left {
     opacity: 0;
-    transform: translateX(-28px);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-14px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .reveal-left.visible {
@@ -57,9 +57,9 @@
 
   .reveal-right {
     opacity: 0;
-    transform: translateX(28px);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(14px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .reveal-right.visible {
@@ -68,27 +68,19 @@
   }
 
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
-  }
-
-  .glass-dark {
-    @apply bg-slate-900/80 backdrop-blur-md border border-slate-700/50;
-  }
-
-  .text-gradient-orange {
-    @apply bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent;
+    @apply bg-ivory-100/80 backdrop-blur-md border border-ivory-300/60;
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400
-           text-white font-semibold rounded-xl transition-all duration-200
-           hover:shadow-[0_0_24px_rgba(249,115,22,0.4)] active:scale-95;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-coral-500 hover:bg-coral-700
+           text-ivory-50 font-medium rounded-full shadow-soft hover:shadow-lift
+           transition-all duration-300 active:scale-[0.98];
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-6 py-3 border border-slate-600
-           hover:border-orange-500 text-slate-300 hover:text-orange-400
-           font-semibold rounded-xl transition-all duration-200 active:scale-95;
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-ink-900/15
+           hover:border-mist-500 text-ink-900 hover:text-mist-700
+           font-medium rounded-full transition-colors duration-300;
   }
 
   .section-label {
@@ -96,7 +88,16 @@
            tracking-widest uppercase;
   }
 
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-medium tracking-[0.2em]
+           uppercase text-mist-500;
+  }
+
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+    @apply transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lift;
+  }
+
+  .photo-soft {
+    @apply saturate-[0.92] brightness-[1.02];
   }
 }
